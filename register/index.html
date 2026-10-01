@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>АЭЭТК | Басқару Панелі</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="ais.css">
+</head>
+<body>
+
+<!-- СЕНДВИЧ МЕНЮ (САЙДБАР) -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="Energo_colledg-removebg-preview.png" alt="Колледж логотипі" class="sidebar-logo">
+            <span class="logo-text">Энерго Колледж</span>
+        </div>
+        <div class="sidebar-menu">
+            <a onclick="openPage('dashboard')" class="menu-item active" id="menu-dashboard">
+                <i class="fa-solid fa-gauge"></i> <span>Басты бет</span>
+            </a>
+            <a onclick="openPage('posts')" class="menu-item" id="menu-posts">
+                <i class="fa-solid fa-newspaper"></i> <span>Жаңалықтар</span>
+            </a>
+            <a onclick="openPage('media')" class="menu-item" id="menu-media">
+                <i class="fa-solid fa-calendar-days"></i> <span>Кесте</span>
+            </a>
+            <a onclick="openPage('users')" class="menu-item" id="menu-users">
+                <i class="fa-solid fa-users"></i> <span>Веб-242 тобы</span>
+            </a>
+            <a onclick="openPage('settings')" class="menu-item" id="menu-settings">
+                <i class="fa-solid fa-location-dot"></i> <span>Contacts</span>
+            </a>
+        </div>
+        <div class="sidebar-footer">
+            <small>Веб-242 АЭЭТК System v2.0</small>
+        </div>
+    </aside>
+
+    <!-- НЕГІЗГІ МАЗМҰН АЙМАҒЫ -->
+    <main class="main-content">
+        <!-- ЖОҒАРҒЫ ХЕДЕР -->
+        <header class="topheader">
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Іздеу...">
+            </div>
+            <div class="user-profile">
+                <i class="fa-solid fa-bell"></i>
+                <div class="avatar">A</div>
+                <span>Айсұлу Ерәліқызы</span>
+            </div>
+        </header>
+
+        <!-- 1-БЕТ: DASHBOARD -->
+        <div id="page-dashboard" class="page-content active-page">
+            <h1 class="page-title">Жалпы ақпарат</h1>
+            
+            <div class="cards-grid">
+                <div class="stat-card">
+                    <i class="fa-solid fa-user-graduate card-icon blue"></i>
+                    <div>
+                        <h3>2300</h3>
+                        <p>Студенттер саны</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-layer-group card-icon green"></i>
+                    <div>
+                        <h3>Веб-242</h3>
+                        <p>Топ Атауы</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-chalkboard-user card-icon orange"></i>
+                    <div>
+                        <h3>120</h3>
+                        <p>Мұғалімдер</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-box margin-top">
+                <h2><i class="fa-solid fa-bullhorn"></i> Колледж туралы</h2>
+                <p>Алматы энергетика және электронды технологиялар колледжі (АЭЭТК) — IT, энергетика және электроника саласында жоғары білікті мамандарды даярлайтын жетекші оқу орны толығырақ...</p>
+            </div>
+        </div>
+
+        <!-- 2-БЕТ: POSTS (ЖАҢАЛЫҚТАР) -->
+        <div id="page-posts" class="page-content">
+            <h1 class="page-title"> Колледж жаңалықтары мен мақалалар</h1>
+            <div class="posts-list">
+                <article class="post-item">
+                    <div class="post-badge">Жаңалық</div>
+                    <h3>Веб-242 тобы жаңа семестрді бастады</h3>
+                    <p>Барлық студенттер сабаққа толық қатысып, веб-программалау пәні бойынша жаңа жобаларды дайындауда.</p>
+                    <small><i class="fa-regular fa-clock"></i> 2026 ж.</small>
+                </article>
+                <article class="post-item">
+                    <div class="post-badge orange">Хабарландыру</div>
+                    <h3>Хакатон конкурсына тіркелу басталды</h3>
+                    <p>АЭЭТК студенттері арасында өтетін IT хакатонға өтінім қабылдануда. Жеңімпаздарға арнайы жүлделер қарастырылған.</p>
+                    <small><i class="fa-regular fa-clock"></i> 2026 ж.</small>
+                </article>
+            </div>
+        </div>
+
+        <!-- 3-БЕТ: MEDIA (САБАҚ КЕСТЕСІ) -->
+        <div id="page-media" class="page-content">
+            <h1 class="page-title">Schedule — Сабақ кестесі</h1>
+            
+            <div class="day-tabs">
+                <button class="tab-btn active" onclick="switchDay('mon', this)">Дүйсенбі</button>
+                <button class="tab-btn" onclick="switchDay('tue', this)">Сейсенбі</button>
+                <button class="tab-btn" onclick="switchDay('wed', this)">Сәрсенбі</button>
+                <button class="tab-btn" onclick="switchDay('thu', this)">Бейсенбі</button>
+                <button class="tab-btn" onclick="switchDay('fri', this)">Жұма</button>
+            </div>
+
+            <div class="content-box">
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Уақыты</th>
+                            <th>Пән атауы</th>
+                            <th>Кабинет</th>
+                        </tr>
+                    </thead>
+                    <tbody id="schedule-rows">
+                        <!-- JS толтырады -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 4-БЕТ: USERS (ВЕБ-242 ТОБЫ) -->
+        <div id="page-users" class="page-content">
+            <h1 class="page-title">Users — Топ құрамы (23 оқушы)</h1>
+            
+            <!-- Куратор -->
+            <div class="curator-banner">
+                <i class="fa-solid fa-user-shield curator-icon"></i>
+                <div>
+                    <small>ТОП КУРАТОРЫ</small>
+                    <h2>Ахметова Айнұр Серікқызы</h2>
+                    <p>IT және Веб-технологиялар кафедрасының оқытушысы</p>
+                </div>
+            </div>
+
+            <!-- 23 оқушы тізімі -->
+            <div class="users-grid" id="users-list">
+                <!-- JS арқылы жүктеледі -->
+            </div>
+        </div>
+
+        <!-- 5-БЕТ: SETTINGS (МЕКЕНЖАЙ ЖӘНЕ КАРТА) -->
+        <div id="page-settings" class="page-content">
+            <h1 class="page-title">Settings & Location — Мекенжай мен Карта</h1>
+            
+            <div class="content-box">
+                <p><strong>Мекенжайымыз:</strong> Алматы қаласы, Жандосов көшесі, 65</p>
+                <p><strong>Оқу орны:</strong> Алматы энергетика және электронды технологиялар колледжі</p>
+            </div>
+
+            <div class="map-container margin-top">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2908.243572886477!2d76.87707337660682!3d43.20438188132488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x388369b52c03c5eb%3A0xd68d04279ab3d1a7!2z0YPQuy4g0JbQsNC90LTQvtGB0L7QstCwIDY1LCDQkNC70LzQsNGC0YkgMDUwMDM1!5e0!3m2!1skk!2skz!4v1700000000000!5m2!1skk!2skz" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0; border-radius: 12px;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </main>
+
+    <script src="ais.js"></script>
+</body>
+</html>
